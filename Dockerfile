@@ -21,9 +21,22 @@ RUN apt-get -y install libapache2-mod-php5 php-pear php5-curl php5-mysql php5-js
 #remove tmp files
 RUN apt-get clean
 
+#enable modules for php and apache
 RUN /usr/sbin/php5enmod mcrypt
+RUN a2enmod rewrite
 
-COPY test.php /var/www/html/
+#remove default apache index.html
+RUN rm /var/www/html/index.html
+
+# copy phpipam sources to web dir
+ENV PHPIPAM_SOURCE="https://github.com/phpipam/phpipam/archive/"
+ENV PHPIPAM_VERSION="1.2"
+
+ADD ${PHPIPAM_SOURCE}/${PHPIPAM_VERSION}.tar.gz /tmp/
+RUN tar xzf /tmp/${PHPIPAM_VERSION}.tar.gz -C /var/www/html/ --strip-components=1
+
+#create config
+RUN cp /var/www/html/config.dist.php /var/www/html/config.php
 
 WORKDIR /
 CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
