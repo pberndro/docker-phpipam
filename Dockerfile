@@ -4,6 +4,10 @@ MAINTAINER Philip Berndroth <p.berndroth@philuweb.de>
 #update debian
 RUN apt-get update && apt-get -y upgrade
 
+# Installing the 'apt-utils' package gets rid of the 'debconf: delaying package configuration, since apt-utils is not installed'
+# error message when installing any other package with the apt-get package manager.
+RUN apt-get -y install apt-utils
+
 #install some tools
 RUN apt-get -y install curl 
 
