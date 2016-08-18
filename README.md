@@ -5,7 +5,7 @@ The image runs with apache2 webserver and php5 inside.
 
 It will:
 
-* Install debian jessi as base system.
+* Install debian jessie as base system.
 * Install apache2 and php5 with all required modules.
 * Download the latest phpIPAM release from github.com
 
