@@ -10,7 +10,7 @@ ENV DEBCONF_NOWARNINGS yes
 RUN apt-get update && apt-get -y upgrade
 
 #install some tools
-RUN apt-get -y install curl 
+RUN apt-get -y install curl
 
 #install webserver
 RUN apt-get -y install apache2
