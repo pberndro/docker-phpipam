@@ -29,9 +29,9 @@ todo: config options/file to set database connection params.
 
 ```
 
-## Runn the image
+## Run the image
 
 ```
-docker run -itd -p 0.0.0.0:80:80 --name ipam phpipam
+docker run -itd -p 0.0.0.0:8080:80 --name ipam phpipam
 ...
 ```
