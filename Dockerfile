@@ -51,7 +51,6 @@ RUN sed -i \
         -e "s/\['pass'\] = \"phpipamadmin\"/\['pass'\] = getenv(\"MYSQL_PASSWORD\")/" \ 
         -e "s/\['name'\] = \"phpipam\"/\['name'\] = getenv(\"MYSQL_DB\")/" \ 
         -e "s/\['port'\] = 3306/\['port'\] = getenv(\"MYSQL_PORT\")/" \ 
-
         /var/www/html/config.php
 
 WORKDIR /
