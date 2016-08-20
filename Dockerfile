@@ -35,7 +35,7 @@ ENV PHPIPAM_SOURCE="https://github.com/phpipam/phpipam/archive/" \
     MYSQL_USER="phpipam" \
     MYSQL_PASSWORD="phpipamadmin" \
     MYSQL_DB="phpipam" \
-    MYSQL_PORT="3306" \
+    MYSQL_PORT="3306"
 
 # copy phpipam sources to web dir
 ADD ${PHPIPAM_SOURCE}/${PHPIPAM_VERSION}.tar.gz /tmp/
